@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belt Mount Viewer</title>
+  </head>
+  <body>
+    <div id="app">
+      <aside id="panel">
+        <h1>Lap / anti-sub mount</h1>
+        <section>
+          <h2>View</h2>
+          <div class="buttons">
+            <button data-view="iso">Iso</button>
+            <button data-view="top">Top</button>
+            <button data-view="front">Front</button>
+            <button data-view="side">Side</button>
+            <button id="fit">Fit</button>
+          </div>
+          <label>Explode <input id="explode" type="range" min="0" max="1" step="0.01" value="0" /></label>
+          <label><input id="section" type="checkbox" /> Section cut</label>
+          <label>Cut position <input id="cut" type="range" min="-80" max="80" step="0.5" value="0" /></label>
+          <label>Panel opacity <input id="panelOpacity" type="range" min="0.05" max="1" step="0.05" value="0.6" /></label>
+        </section>
+        <section>
+          <h2>Load case</h2>
+          <select id="loadCase"></select>
+        </section>
+        <section>
+          <h2>Forces</h2>
+          <label><input id="showForces" type="checkbox" checked /> Show force vectors</label>
+          <select id="forceMount">
+            <option value="lap">Lap mount</option>
+            <option value="antisub">Anti-sub mount</option>
+            <option value="both">Both mounts</option>
+          </select>
+          <label>Belt load <input id="loadFrac" type="range" min="0" max="8" step="1" value="8" /><span id="loadFracText" class="num"></span></label>
+          <div class="buttons"><button id="play">▶ Ramp 0 → 100%</button></div>
+          <label>Arrow scale <input id="arrowScale" type="range" min="0.5" max="8" step="0.25" value="2.5" /></label>
+          <label><input id="padForces" type="checkbox" /> Per-pad distribution</label>
+          <p class="muted" id="forceMode">Overview. Click a part for its free-body diagram.</p>
+          <table id="forceTable"></table>
+        </section>
+        <section>
+          <h2>Colour by</h2>
+          <select id="colorMode">
+            <option value="material">Material</option>
+            <option value="sf">Safety factor (load case)</option>
+          </select>
+          <div id="legend" class="legend hidden">
+            <span>SF &lt; 1</span><div class="bar"></div><span>≥ 3</span>
+          </div>
+        </section>
+        <section>
+          <h2>Parts</h2>
+          <div id="tree"></div>
+          <p id="totals" class="muted"></p>
+        </section>
+      </aside>
+      <main id="viewport">
+        <div id="info" class="hidden"></div>
+        <div id="hint">Drag: rotate · Right-drag / Shift-drag: pan · Wheel: zoom · Click: select · Double-click: focus</div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
