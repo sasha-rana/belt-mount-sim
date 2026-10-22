@@ -95,7 +95,7 @@ export class ForceView {
         this.padArrows(f, s.mmPerKN, z);
         this.label(at, `${f.name} ${fmt(kN(f.total))}`, f.name, [side * 34, 0, 0]);
       } else {
-        const callout: Vec3 = [ax[0] + side * (34 + 13 * col++), at[1], at[2]];
+        const callout: Vec3 = [ax[0] + side * (36 + 26 * col++), at[1], at[2]];
         this.leader(at, callout, f.name);
         this.arrow(callout, f.total, f.name, s.mmPerKN, "tip", `${f.name} ${fmt(kN(f.total))}`);
       }
@@ -137,27 +137,20 @@ export class ForceView {
   private padArrows(f: ForceItem, mmPerKN: number, z: number) {
     for (const [p, v] of f.pads) {
       if (Math.hypot(...v) < 1) continue;
-      this.arrow([p[0], p[1], p[2] + z], v, f.name, mmPerKN * PAD_BOOST, "tip");
+      this.arrow([p[0], p[1], p[2] + z], v, f.name, mmPerKN * PAD_BOOST, "tip", undefined, true);
     }
   }
 
-  private arrow(at: Vec3, f: Vec3, kind: string, mmPerKN: number, anchor: "tip" | "tail", text?: string) {
+  private arrow(at: Vec3, f: Vec3, kind: string, mmPerKN: number, anchor: "tip" | "tail", text?: string, thin = false) {
     const v = new THREE.Vector3(...f);
     const len = Math.max((v.length() / 1000) * mmPerKN, 1.5);
     const dir = v.clone().normalize();
     const p = new THREE.Vector3(...at);
     const origin = anchor === "tip" ? p.clone().addScaledVector(dir, -len) : p;
-    const head = Math.min(len * 0.3, 6);
-    const a = new THREE.ArrowHelper(dir, origin, len, COLORS[kind] ?? 0x444444, head, head * 0.55);
-    for (const m of [a.line.material, a.cone.material] as THREE.Material[]) {
-      m.depthTest = false;   // forces stay visible through the parts
-      m.transparent = true;
-    }
-    a.renderOrder = 10;
-    this.group.add(a);
+    this.group.add(solidArrow(origin, dir, len, COLORS[kind] ?? 0x444444, thin ? 0.3 : 0.75));
     if (text) {
-      const mid = origin.clone().addScaledVector(dir, anchor === "tip" ? 0 : len);
-      this.label(mid.toArray() as Vec3, text, kind);
+      const end = origin.clone().addScaledVector(dir, anchor === "tip" ? 0 : len);
+      this.label(end.toArray() as Vec3, text, kind);
     }
   }
 
@@ -227,4 +220,21 @@ export function table(mf: MountFrame, body?: Body): { label: string; value: stri
 
 function vecText(v: Vec3) {
   return `${fmt(kN(v))}  (${v.map((x) => (x / 1000).toFixed(2)).join(", ")})`;
+}
+
+/** Arrow with a cylinder shaft and cone head, drawn on top of the parts. */
+function solidArrow(origin: THREE.Vector3, dir: THREE.Vector3, len: number, color: number, radius: number) {
+  const g = new THREE.Group();
+  const mat = new THREE.MeshBasicMaterial({ color, depthTest: false, transparent: true });
+  const head = Math.min(len * 0.35, radius * 6);
+  const shaft = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, len - head, 10), mat);
+  shaft.position.y = (len - head) / 2;
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(radius * 2.6, head, 14), mat);
+  cone.position.y = len - head / 2;
+  g.add(shaft, cone);
+  g.position.copy(origin);
+  g.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
+  g.renderOrder = 10;
+  shaft.renderOrder = cone.renderOrder = 10;
+  return g;
 }

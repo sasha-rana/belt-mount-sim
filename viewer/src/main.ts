@@ -93,7 +93,6 @@ const grid = new THREE.GridHelper(400, 40, 0xb5bcc6, 0xd5dae0);
 grid.rotation.x = Math.PI / 2;
 grid.position.z = -40;
 scene.add(grid);
-scene.add(new THREE.AxesHelper(30));
 
 const forceView = new ForceView();
 scene.add(forceView.group);
@@ -152,6 +151,52 @@ async function load() {
   buildCases();
   applyPanelOpacity();
   setView("iso");
+  updateForces();
+  applyUrlState();
+  document.body.dataset.ready = "1";
+}
+
+// ---------- URL state ----------
+// Deep links and scripted screenshots, e.g.
+//   ?case=belt30&color=sf&explode=0.8&section=1&cut=-75&view=front&select=lap-eyebolt&load=4&pads=1&mount=both
+function applyUrlState() {
+  const q = new URLSearchParams(location.search);
+  const set = (id: string, v: string | null) => {
+    if (v === null) return;
+    const el = $<HTMLInputElement | HTMLSelectElement>(id);
+    if (el instanceof HTMLInputElement && el.type === "checkbox") el.checked = v !== "0";
+    else el.value = v;
+  };
+  set("loadCase", q.get("case"));
+  set("colorMode", q.get("color"));
+  set("explode", q.get("explode"));
+  set("section", q.get("section"));
+  set("cut", q.get("cut"));
+  set("panelOpacity", q.get("opacity"));
+  set("showForces", q.get("forces"));
+  set("forceMount", q.get("mount"));
+  set("loadFrac", q.get("load"));
+  set("arrowScale", q.get("scale"));
+  set("padForces", q.get("pads"));
+  for (const name of (q.get("hide") ?? "").split(",").filter(Boolean)) {
+    for (const p of parts.filter((p) => p.name === name || p.kind === name || p.group === name)) setVisible(p, false);
+  }
+  applyPanelOpacity();
+  applySection();
+  applyExplode();
+  recolor();
+  const sel = parts.find((p) => p.name === q.get("select"));
+  if (sel) select(sel);
+  if (q.get("view")) setView(q.get("view")!);
+  if (q.get("focus")) {
+    const f = parts.find((p) => p.name === q.get("focus"));
+    if (f) focus(f);
+  }
+  const zoom = Number(q.get("zoom"));
+  if (zoom > 0) {
+    camera.position.sub(controls.target).multiplyScalar(1 / zoom).add(controls.target);
+  }
+  if (q.get("ui") === "0") document.body.classList.add("bare");
   updateForces();
 }
 
@@ -409,6 +454,8 @@ const VIEWS: Record<string, THREE.Vector3> = {
   top: new THREE.Vector3(0, -0.0001, 1),
   front: new THREE.Vector3(0, -1, 0.0001),
   side: new THREE.Vector3(1, 0, 0.0001),
+  // Looks at the cut face of the section view (the cut keeps the -Y half)
+  section: new THREE.Vector3(0.75, 1.1, 0.55),
 };
 
 function setView(v: string) {

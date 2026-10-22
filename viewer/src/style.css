@@ -112,3 +112,6 @@ button:hover { border-color: var(--accent); }
   border-radius: 9px;
   white-space: nowrap;
 }
+
+/* ?ui=0: viewport only, for screenshots and embeds */
+body.bare #panel, body.bare #hint { display: none; }
