@@ -1,0 +1,62 @@
+{
+ "inner-skin": {
+  "volume_cm3": 135.507,
+  "mass_g": 135.5
+ },
+ "core": {
+  "volume_cm3": 518.98,
+  "mass_g": 519.0
+ },
+ "outer-skin": {
+  "volume_cm3": 135.507,
+  "mass_g": 135.5
+ },
+ "lap-spreader": {
+  "volume_cm3": 12.216,
+  "mass_g": 34.3
+ },
+ "lap-bushing": {
+  "volume_cm3": 4.653,
+  "mass_g": 13.1
+ },
+ "lap-annulus": {
+  "volume_cm3": 22.139,
+  "mass_g": 14.4
+ },
+ "lap-backing": {
+  "volume_cm3": 6.698,
+  "mass_g": 18.8
+ },
+ "lap-eyebolt": {
+  "volume_cm3": 17.322,
+  "mass_g": 136.8
+ },
+ "lap-nut": {
+  "volume_cm3": 2.394,
+  "mass_g": 18.9
+ },
+ "antisub-spreader": {
+  "volume_cm3": 12.216,
+  "mass_g": 34.3
+ },
+ "antisub-bushing": {
+  "volume_cm3": 4.653,
+  "mass_g": 13.1
+ },
+ "antisub-annulus": {
+  "volume_cm3": 22.139,
+  "mass_g": 14.4
+ },
+ "antisub-backing": {
+  "volume_cm3": 6.698,
+  "mass_g": 18.8
+ },
+ "antisub-eyebolt": {
+  "volume_cm3": 17.322,
+  "mass_g": 136.8
+ },
+ "antisub-nut": {
+  "volume_cm3": 2.394,
+  "mass_g": 18.9
+ }
+}

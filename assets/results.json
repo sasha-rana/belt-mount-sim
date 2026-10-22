@@ -1,0 +1,431 @@
+{
+ "rule": {
+  "description": "15 kN normal to the panel (rule test, mounts >= 125 mm apart)",
+  "tension_N": 14999.999994202051,
+  "bolt_vm_MPa": 177.9359617654502,
+  "bolt_axial_MPa": 177.93594306049823,
+  "bolt_bending_Nmm": 0.0017549517611213125,
+  "bolt_shear_N": 0.0,
+  "nut_strip_MPa": 73.25299137256019,
+  "backing_annulus_share": 0.16936507222852515,
+  "backing_MPa": 150.32761018695507,
+  "spreader_MPa": 0.0,
+  "punch_N": 14999.999986477378,
+  "punch_MPa": 30.567530655905735,
+  "punch_ses_MPa": 40.628385662181415,
+  "skin_bearing_MPa": 32.129539790797764,
+  "bushing_MPa": 38.68069501497774,
+  "margins": {
+   "eyebolt shank, 8.8 steel": {
+    "stress": 177.9359617654502,
+    "yield": 640,
+    "ultimate": 800
+   },
+   "eyebolt shank, A286 (AMS 5737)": {
+    "stress": 177.9359617654502,
+    "yield": 655,
+    "ultimate": 965
+   },
+   "nut threads (8 nut)": {
+    "stress": 73.25299137256019,
+    "yield": null,
+    "ultimate": 463.99999999999994
+   },
+   "backing plate, 6061-T6": {
+    "stress": 150.32761018695507,
+    "yield": 276,
+    "ultimate": 310
+   },
+   "spreader, 6061-T6": {
+    "stress": 0.0,
+    "yield": 276,
+    "ultimate": 310
+   },
+   "bushing compression, 6061-T6": {
+    "stress": 38.68069501497774,
+    "yield": 276,
+    "ultimate": null
+   },
+   "backing plate, 7050-T7451": {
+    "stress": 150.32761018695507,
+    "yield": 455,
+    "ultimate": 524
+   },
+   "spreader, 7050-T7451": {
+    "stress": 0.0,
+    "yield": 455,
+    "ultimate": 524
+   },
+   "bushing compression, 7050-T7451": {
+    "stress": 38.68069501497774,
+    "yield": 455,
+    "ultimate": null
+   },
+   "inner skin punch-through (\u00d855 perimeter)": {
+    "stress": 30.567530655905735,
+    "yield": null,
+    "ultimate": 61.0
+   },
+   "inner skin punch-through (SES 130 mm perimeter)": {
+    "stress": 40.628385662181415,
+    "yield": null,
+    "ultimate": 61.0
+   },
+   "skin bearing under pads": {
+    "stress": 32.129539790797764,
+    "yield": null,
+    "ultimate": 300.0
+   }
+  }
+ },
+ "shared": {
+  "description": "30 kN normal (rule load if the mounts were < 125 mm apart)",
+  "tension_N": 29999.999988438994,
+  "bolt_vm_MPa": 355.8719128766364,
+  "bolt_axial_MPa": 355.87188612099646,
+  "bolt_bending_Nmm": 0.002510290188530845,
+  "bolt_shear_N": 0.0,
+  "nut_strip_MPa": 146.50598274529077,
+  "backing_annulus_share": 0.16936622107424815,
+  "backing_MPa": 300.65719675818394,
+  "spreader_MPa": 0.0,
+  "punch_N": 30000.00001025753,
+  "punch_MPa": 61.13506138782838,
+  "punch_ses_MPa": 81.25677142539959,
+  "skin_bearing_MPa": 64.25898565765141,
+  "bushing_MPa": 77.36139003004547,
+  "margins": {
+   "eyebolt shank, 8.8 steel": {
+    "stress": 355.8719128766364,
+    "yield": 640,
+    "ultimate": 800
+   },
+   "eyebolt shank, A286 (AMS 5737)": {
+    "stress": 355.8719128766364,
+    "yield": 655,
+    "ultimate": 965
+   },
+   "nut threads (8 nut)": {
+    "stress": 146.50598274529077,
+    "yield": null,
+    "ultimate": 463.99999999999994
+   },
+   "backing plate, 6061-T6": {
+    "stress": 300.65719675818394,
+    "yield": 276,
+    "ultimate": 310
+   },
+   "spreader, 6061-T6": {
+    "stress": 0.0,
+    "yield": 276,
+    "ultimate": 310
+   },
+   "bushing compression, 6061-T6": {
+    "stress": 77.36139003004547,
+    "yield": 276,
+    "ultimate": null
+   },
+   "backing plate, 7050-T7451": {
+    "stress": 300.65719675818394,
+    "yield": 455,
+    "ultimate": 524
+   },
+   "spreader, 7050-T7451": {
+    "stress": 0.0,
+    "yield": 455,
+    "ultimate": 524
+   },
+   "bushing compression, 7050-T7451": {
+    "stress": 77.36139003004547,
+    "yield": 455,
+    "ultimate": null
+   },
+   "inner skin punch-through (\u00d855 perimeter)": {
+    "stress": 61.13506138782838,
+    "yield": null,
+    "ultimate": 61.0
+   },
+   "inner skin punch-through (SES 130 mm perimeter)": {
+    "stress": 81.25677142539959,
+    "yield": null,
+    "ultimate": 61.0
+   },
+   "skin bearing under pads": {
+    "stress": 64.25898565765141,
+    "yield": null,
+    "ultimate": 300.0
+   }
+  }
+ },
+ "belt30": {
+  "description": "15 kN at 30 deg off normal (belt angle in the car)",
+  "tension_N": 27178.392394103772,
+  "bolt_vm_MPa": 2677.6414636193954,
+  "bolt_axial_MPa": 321.1019431593218,
+  "bolt_bending_Nmm": 220898.88704814573,
+  "bolt_shear_N": 4680.237071562763,
+  "nut_strip_MPa": 132.7265696223254,
+  "backing_annulus_share": 0.008285901893626995,
+  "backing_MPa": 97.25593156891527,
+  "spreader_MPa": 257.33759688124655,
+  "punch_N": 12987.686623450894,
+  "punch_MPa": 26.466767291302144,
+  "punch_ses_MPa": 35.17791609818769,
+  "skin_bearing_MPa": 201.2504944849352,
+  "bushing_MPa": 70.08527384000465,
+  "margins": {
+   "eyebolt shank, 8.8 steel": {
+    "stress": 2677.6414636193954,
+    "yield": 640,
+    "ultimate": 800
+   },
+   "eyebolt shank, A286 (AMS 5737)": {
+    "stress": 2677.6414636193954,
+    "yield": 655,
+    "ultimate": 965
+   },
+   "nut threads (8 nut)": {
+    "stress": 132.7265696223254,
+    "yield": null,
+    "ultimate": 463.99999999999994
+   },
+   "backing plate, 6061-T6": {
+    "stress": 97.25593156891527,
+    "yield": 276,
+    "ultimate": 310
+   },
+   "spreader, 6061-T6": {
+    "stress": 257.33759688124655,
+    "yield": 276,
+    "ultimate": 310
+   },
+   "bushing compression, 6061-T6": {
+    "stress": 70.08527384000465,
+    "yield": 276,
+    "ultimate": null
+   },
+   "backing plate, 7050-T7451": {
+    "stress": 97.25593156891527,
+    "yield": 455,
+    "ultimate": 524
+   },
+   "spreader, 7050-T7451": {
+    "stress": 257.33759688124655,
+    "yield": 455,
+    "ultimate": 524
+   },
+   "bushing compression, 7050-T7451": {
+    "stress": 70.08527384000465,
+    "yield": 455,
+    "ultimate": null
+   },
+   "inner skin punch-through (\u00d855 perimeter)": {
+    "stress": 26.466767291302144,
+    "yield": null,
+    "ultimate": 61.0
+   },
+   "inner skin punch-through (SES 130 mm perimeter)": {
+    "stress": 35.17791609818769,
+    "yield": null,
+    "ultimate": 61.0
+   },
+   "skin bearing under pads": {
+    "stress": 201.2504944849352,
+    "yield": null,
+    "ultimate": 300.0
+   }
+  }
+ },
+ "sweep": [
+  {
+   "preload": 8000.0,
+   "angle": 0,
+   "seated": false,
+   "tension_N": 14999.999994224083,
+   "bolt_vm_MPa": 177.93595217541952,
+   "bolt_axial_MPa": 177.93594306049823,
+   "bolt_bending_Nmm": 0.0008551878231046446,
+   "bolt_shear_N": 0.0,
+   "nut_strip_MPa": 73.25299137266778,
+   "backing_annulus_share": 0.16933597657709257,
+   "backing_MPa": 150.30190662686036,
+   "spreader_MPa": 0.0,
+   "punch_N": 14999.99915369342,
+   "punch_MPa": 30.567528958829122,
+   "punch_ses_MPa": 40.62838340653689,
+   "skin_bearing_MPa": 32.130668291891695,
+   "bushing_MPa": 38.68069501503456
+  },
+  {
+   "preload": 8000.0,
+   "angle": 3,
+   "seated": false,
+   "tension_N": 14979.371511384534,
+   "bolt_vm_MPa": 652.2844474259014,
+   "bolt_axial_MPa": 177.6920880346217,
+   "bolt_bending_Nmm": 44504.70061146034,
+   "bolt_shear_N": 785.0393436441575,
+   "nut_strip_MPa": 73.15225150093053,
+   "backing_annulus_share": 0.0,
+   "backing_MPa": 0.0,
+   "spreader_MPa": 0.0,
+   "punch_N": 23156.772571120182,
+   "punch_MPa": 47.189690406512106,
+   "punch_ses_MPa": 62.721485837270265,
+   "skin_bearing_MPa": 91.3446601003385,
+   "bushing_MPa": 38.627500078124775
+  },
+  {
+   "preload": 8000.0,
+   "angle": 10,
+   "seated": true,
+   "tension_N": 17078.5059626385,
+   "bolt_vm_MPa": 1712.0277655560378,
+   "bolt_axial_MPa": 202.34309695135948,
+   "bolt_bending_Nmm": 141489.58963665142,
+   "bolt_shear_N": 3290.102525375716,
+   "nut_strip_MPa": 83.40344336139631,
+   "backing_annulus_share": 0.23374665112947607,
+   "backing_MPa": 618.778606970721,
+   "spreader_MPa": 29.109549285385313,
+   "punch_N": 14807.191067111362,
+   "punch_MPa": 30.17461781865467,
+   "punch_ses_MPa": 40.106151319369886,
+   "skin_bearing_MPa": 102.46095517268546,
+   "bushing_MPa": 44.040565380509584
+  },
+  {
+   "preload": 8000.0,
+   "angle": 20,
+   "seated": true,
+   "tension_N": 21992.287528102603,
+   "bolt_vm_MPa": 2065.5071750902675,
+   "bolt_axial_MPa": 260.5261113100909,
+   "bolt_bending_Nmm": 169224.8606320555,
+   "bolt_shear_N": 3244.9189199992347,
+   "nut_strip_MPa": 107.40005661211086,
+   "backing_annulus_share": 0.15785250756804228,
+   "backing_MPa": 398.21390581152895,
+   "spreader_MPa": 226.49571608707086,
+   "punch_N": 14167.48684226977,
+   "punch_MPa": 28.871005917242268,
+   "punch_ses_MPa": 38.37347465403513,
+   "skin_bearing_MPa": 183.72387192501546,
+   "bushing_MPa": 56.71179779233651
+  },
+  {
+   "preload": 8000.0,
+   "angle": 30,
+   "seated": true,
+   "tension_N": 27178.259858144243,
+   "bolt_vm_MPa": 2602.674511742461,
+   "bolt_axial_MPa": 322.22750320670576,
+   "bolt_bending_Nmm": 213776.12627446675,
+   "bolt_shear_N": 4418.762076040142,
+   "nut_strip_MPa": 132.72592237862514,
+   "backing_annulus_share": 0.0,
+   "backing_MPa": 0.0,
+   "spreader_MPa": 637.5894879727576,
+   "punch_N": 12860.08202485083,
+   "punch_MPa": 26.206730125764917,
+   "punch_ses_MPa": 34.83229150826335,
+   "skin_bearing_MPa": 225.780329277869,
+   "bushing_MPa": 70.08493206780258
+  },
+  {
+   "preload": 25000.0,
+   "angle": 0,
+   "seated": true,
+   "tension_N": 24999.99231271636,
+   "bolt_vm_MPa": 296.55992332869664,
+   "bolt_axial_MPa": 296.5598138656929,
+   "bolt_bending_Nmm": 0.01027013012606255,
+   "bolt_shear_N": 0.0004948443904604113,
+   "nut_strip_MPa": 122.08828146035627,
+   "backing_annulus_share": 0.1693662253092077,
+   "backing_MPa": 250.54760602476856,
+   "spreader_MPa": 37.77850046525956,
+   "punch_N": 15000.000002384626,
+   "punch_MPa": 30.567530688322087,
+   "punch_ses_MPa": 40.628385705267135,
+   "skin_bearing_MPa": 53.54914055937402,
+   "bushing_MPa": 64.46780522658338
+  },
+  {
+   "preload": 25000.0,
+   "angle": 3,
+   "seated": true,
+   "tension_N": 24999.992308201134,
+   "bolt_vm_MPa": 469.61937590395775,
+   "bolt_axial_MPa": 296.55981390672616,
+   "bolt_bending_Nmm": 16228.987726351232,
+   "bolt_shear_N": 392.51993675503326,
+   "nut_strip_MPa": 122.08828143830601,
+   "backing_annulus_share": 0.16936622902430562,
+   "backing_MPa": 289.48117283746575,
+   "spreader_MPa": 57.143139229611734,
+   "punch_N": 14979.443017724638,
+   "punch_MPa": 30.52563893769851,
+   "punch_ses_MPa": 40.57270589849577,
+   "skin_bearing_MPa": 57.60701469873011,
+   "bushing_MPa": 64.4678052149399
+  },
+  {
+   "preload": 25000.0,
+   "angle": 10,
+   "seated": true,
+   "tension_N": 24999.87189216483,
+   "bolt_vm_MPa": 1186.1135210681416,
+   "bolt_axial_MPa": 295.49135842081796,
+   "bolt_bending_Nmm": 83422.23111243531,
+   "bolt_shear_N": 2602.3810426430964,
+   "nut_strip_MPa": 122.08769338264788,
+   "backing_annulus_share": 0.006695699426230232,
+   "backing_MPa": 71.70507720308451,
+   "spreader_MPa": 0.0,
+   "punch_N": 15013.291152443877,
+   "punch_MPa": 30.594615864139065,
+   "punch_ses_MPa": 40.664385569999666,
+   "skin_bearing_MPa": 103.31236910088398,
+   "bushing_MPa": 64.46749469654144
+  },
+  {
+   "preload": 25000.0,
+   "angle": 20,
+   "seated": true,
+   "tension_N": 25000.007369886265,
+   "bolt_vm_MPa": 2076.899089711633,
+   "bolt_axial_MPa": 298.32168760930193,
+   "bolt_bending_Nmm": 166741.92292660684,
+   "bolt_shear_N": 3327.6485429755085,
+   "nut_strip_MPa": 122.08835499253878,
+   "backing_annulus_share": 0.167634567665213,
+   "backing_MPa": 506.067223385381,
+   "spreader_MPa": 0.0,
+   "punch_N": 13793.27886123624,
+   "punch_MPa": 28.108431654426333,
+   "punch_ses_MPa": 37.35991024170163,
+   "skin_bearing_MPa": 138.45581553455415,
+   "bushing_MPa": 64.46784405470319
+  },
+  {
+   "preload": 25000.0,
+   "angle": 30,
+   "seated": true,
+   "tension_N": 25891.230031890922,
+   "bolt_vm_MPa": 2528.7805720058686,
+   "bolt_axial_MPa": 306.92262312807065,
+   "bolt_bending_Nmm": 208330.51216890663,
+   "bolt_shear_N": 3689.691786976861,
+   "nut_strip_MPa": 126.44067005894489,
+   "backing_annulus_share": 0.1518737753752999,
+   "backing_MPa": 876.3504906819246,
+   "spreader_MPa": 516.1718491408002,
+   "punch_N": 13053.82663272448,
+   "punch_MPa": 26.601549742160465,
+   "punch_ses_MPa": 35.35706021864702,
+   "skin_bearing_MPa": 122.84443811641866,
+   "bushing_MPa": 66.76605152088743
+  }
+ ]
+}
