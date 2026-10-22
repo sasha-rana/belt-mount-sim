@@ -5,3 +5,6 @@ viewer/dist/
 viewer/public/assets/
 .nwave/
 .DS_Store
+MUJOCO_LOG.TXT
+mujoco/belt_mount.xml
+freecad/*.FCStd
